@@ -18,10 +18,8 @@ class FormController extends Controller
            $message->to($data['email'],$data['name']);
            $message->subject('MEGA Event');
            $message->from('moicit.2018@gmail.com','MOIC');
-           //$message->embed('img/truck.jpg');
-           
         });
-        //  what do affter finish submit success
+       return view('form.form');
      }
 
      public function form()
@@ -38,12 +36,35 @@ class FormController extends Controller
     public function store(Request $request)
     {
 
-        /*$this->validate($request,[
-            'email'=>'required',
-            'age' =>'required',
-            'workshop'=>'required',
-            
-        ]);*/
+        $this->validate($request,[
+            'age' =>array('required'),
+            'email'=>array('required','email'),
+            'phone'=>array('required','max:11','min:11'),
+            'name'=>array('required','max:150'),
+            ]);
+            $nameRegex = "/^[^*|^@|^!|^#|^$|^%|^\^|^&|^\(|^\)|^\[|^\{|^\}|^\]|^\b)]*$/";
+            $ageRegex = '[0-9])|[0-9][0-9]';
+        preg_match($nameRegex,$request->input('name'),$nameMatch);
+        preg_match($nameRegex,$request->input('age'),$ageMatch);
+        if(count($nameMatch)>0&&$nameMatch[0]==$request->input('name'))
+        {
+            echo"yes";
+        }
+        else{
+            echo"No Name";
+            return redirect()->back();
+        }
+        if(count($ageMatch)>0&&$ageMatch[0]==$request->input('age'))
+        {
+            echo"yes";
+        }
+        else{
+            echo"No age";
+            return redirect()->back();
+        }
+       
+
+
         $user=new UserData;
         
         $user->Name=$request->input('name');
@@ -66,13 +87,13 @@ class FormController extends Controller
         }
 
 
-        $user->save();
+        /*$user->save();
         $data=array('name'=>$user->Name,'email'=>$user->Email);
-        $this->send_email($data);
-        /*$count = DB::table('users_datas')->where('WorkShop',$request->input('workshop'))->orWhere('subworkshop',$request->input('subworkshop'))->count(DB::raw('DISTINCT Email'));
+        $this->send_email($data);*/
+        $count = DB::table('users_datas')->where('WorkShop',$request->input('workshop'))->Where('subworkshop',$request->input('subworkshop'))->count(DB::raw('DISTINCT Email'));
         $count1 = DB::table('users_datas')->where('WorkShop',$request->input('workshop'))->count(DB::raw('DISTINCT Email'));
 
-        if($user->WorkShop=="it" or $user->WorkShop==""or $user->WorkShop=="")
+        if($user->WorkShop=="it" or $user->WorkShop=="")
         {
             if($count<25)
             {
@@ -102,7 +123,7 @@ class FormController extends Controller
                 return view('index');
             }
         }
-        */
+        
         
     }
     

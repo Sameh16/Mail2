@@ -97,7 +97,7 @@
                     </select>
                     <label for="workshopsel">ورشة العمل</label>
                 </div>
-
+                <!--
                 <div class="controls col-md-10 wow slideInUp" id="ws1">
                     <input type="text" class="floatLabel" name="wsInfo">
                     <label for="wsInfo">اولى</label>
@@ -147,7 +147,7 @@
                     <input type="text" class="floatLabel" name="wsInfo">
                     <label for="wsInfo">ماذا تعرف عن الاندرويد</label>
                 </div>
-
+            -->
 
                 <div class="controls wow slideInUp">
 
