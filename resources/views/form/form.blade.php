@@ -16,17 +16,16 @@
     <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
     <link href="{{asset('css/animate.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('css/form.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('css/form.css')}}" rel="stylesheet" type="text/css" />
     <link rel="icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon" />
-    <link href="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/theme-default.min.css" rel="stylesheet" type="text/css"
-    />
     <style>
         @import url('https://fonts.googleapis.com/css?family=Cairo');
     </style>
 </head>
 <!-- end::Head -->
 
-<body dir="ltr">
-    <div class="container">
+<body dir="rtl">
+    <div class="container custom-scrollbar custom-text-selection">
         <header id="header">
             <h1 class="wow slideInUp">
                 <i class="fa  fa-rocket "></i>
@@ -84,21 +83,56 @@
                     <i class="fa fa-sort"></i>
                     <select id="workShop" class="floatLabel" name="workshopsel">
                         <option value=""></option>
-                        <option value="ws1">اولى </option>
-                        <option value="ws2">ثانية</option>
-                        <option value="ws3">ثالثة</option>
-                        <option value="ws4">رابعة</option>
-                        <option value="ws5">خامسة</option>
-                        <option value="ws6">سادسة</option>
-                        <option value="ws7">سابعة</option>
-                        <option value="ws8">ثامنة</option>
-                        <option value="ws9">تاسعة</option>
-                        <option value="ws10">عاشرة</option>
+                        <option value="ws1">Marketing </option>
+                        <option value="ws2">Sales</option>
+                        <option value="ws3">IT</option>
+                        <option value="ws4">Graphic Design</option>
+                        <option value="ws5">HR</option>
+                        <option value="ws6">Supply chain</option>
+                        <option value="ws7">Media production</option>
+                        <option value="ws8">Development</option>
+                        <option value="ws9">TOT</option>
+                        <option value="ws10">Project management</option>
                     </select>
                     <label for="workshopsel">ورشة العمل</label>
                 </div>
-                <!--
-                <div class="controls col-md-10 wow slideInUp" id="ws1">
+
+                <div class="controls wow slideInUp">
+                    <i class="fa fa-sort"></i>
+                    <select id="subworkShop" class="floatLabel" name="subworkshopsel">
+                        <option value=""></option>
+
+                        <option id="ws1-1" value="ws1">Digital marketing </option>
+                        <option id="ws1-2" value="ws1">Direct marketing </option>
+
+                        <option id="ws2-1" value="ws1">Business to Business </option>
+                        <option id="ws2-2" value="ws1">Business to Client </option>
+
+                        <option id="ws3-1" value="ws1">Web design </option>
+                        <option id="ws3-2" value="ws1">Android development </option>
+                        <option id="ws3-3" value="ws1">Data analysis </option>
+                        
+                        <option id="ws4-1" value="ws1">Postersاولى </option>
+                        <option id="ws4-2" value="ws1">Typography </option>
+                        <option id="ws4-3" value="ws1">Logo </option>
+
+                        <option id="ws5-1" value="ws1">Organization development </option>
+                        <option id="ws5-2" value="ws1">Recruitment </option>
+
+                        <option id="ws6" value="ws1">اولى </option>
+
+                        <option id="ws7" value="ws1">اولى </option>
+                        
+                        <option id="ws8" value="ws1">اولى </option>
+
+                        <option id="ws9" value="ws1">اولى </option>
+
+                        <option id="ws10" value="ws1">اولى </option>
+                    </select>
+                    <label for="workshopsel">ورشة العمل الفرعية</label>
+                </div>
+
+                {{-- <div class="controls col-md-10 wow slideInUp" id="ws1">
                     <input type="text" class="floatLabel" name="wsInfo">
                     <label for="wsInfo">اولى</label>
                 </div>
@@ -146,8 +180,8 @@
                 <div class="controls col-md-10 wow slideInUp" id="ws10">
                     <input type="text" class="floatLabel" name="wsInfo">
                     <label for="wsInfo">ماذا تعرف عن الاندرويد</label>
-                </div>
-            -->
+                </div> --}}
+
 
                 <div class="controls wow slideInUp">
 

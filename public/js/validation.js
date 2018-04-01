@@ -1,17 +1,6 @@
 $(function() {
 
     $.validator.setDefaults({
-      errorClass: 'help-block',
-      highlight: function(element) {
-        $(element)
-          .closest('.form-group')
-          .addClass('has-error');
-      },
-      unhighlight: function(element) {
-        $(element)
-          .closest('.form-group')
-          .removeClass('has-error');
-      },
       errorPlacement: function (error, element) {
         if (element.prop('type') === 'radio') {
           error.insertAfter(element.parent());
@@ -24,18 +13,20 @@ $(function() {
 
     $("#register-form").validate({
       rules: {
+
         name: {
             required: true,
             lettersonly: true
           },
+
         email: {
           required: true,
-          email: true,
+          email: true
         },
 
         phone: {
           required: true,
-          digits: true,
+          digits: true
         },
 
         age:{
@@ -44,7 +35,7 @@ $(function() {
         },
 
         school:{
-            required:true,
+            required:true
         },
 
         address: {
@@ -52,6 +43,10 @@ $(function() {
         },
 
         workshopsel:{
+            required: true
+        },
+
+        subworkshopsel:{
             required: true
         },
 
@@ -67,17 +62,17 @@ $(function() {
       messages: {
         name: {
           required: 'الأسم مطلوب',
-          lettersonly: 'يجب أن لا يحتوي الأسم على أرقام',
+          lettersonly: 'يجب أن لا يحتوي الأسم إلا على حروف'
         },
 
         email:{
             required: 'البريد الإلكتروني مطلوب',
-            email: 'تأكد من البريد الإلكتروني',
+            email: 'تأكد من البريد الإلكتروني'
         },
 
         phone:{
             required:'رقم الهاتف مطلوب',
-            digits:'لابد أن لا يحتوي رقم الهاتف على حروف !',
+            digits:'تأكد من رقم الهاتف'
         },
 
         age:{
@@ -90,11 +85,15 @@ $(function() {
         },
 
         address:{
-            required: 'العنوان مطلوب',
+            required: 'العنوان مطلوب'
         },
 
         workshopsel:{
             required: 'ورشة العمل مطلوبة'
+        },
+
+        subworkshopsel:{
+            required: 'من فضلك أختر ورشة عمل فرعية'
         },
 
         grad:{
@@ -102,10 +101,18 @@ $(function() {
         },
         
         attended:{
-            required: 'هذا الحقل مطلوب',
+            required: 'هذا الحقل مطلوب'
         } 
 
     }
     });
+    
   
   });
+
+
+  function validateOff() {
+    validator.destroy();
+  }
+
+  

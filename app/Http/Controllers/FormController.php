@@ -8,7 +8,7 @@ use Mail;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\UserData;
-
+use Illuminate\Support\Facades\DB;
 class FormController extends Controller
 {
 
@@ -19,7 +19,7 @@ class FormController extends Controller
            $message->subject('MEGA Event');
            $message->from('moicit.2018@gmail.com','MOIC');
         });
-       return view('form.form');
+       //return view('form.form');
      }
 
      public function form()
@@ -43,26 +43,29 @@ class FormController extends Controller
             'name'=>array('required','max:150'),
             ]);
             $nameRegex = "/^[^*|^@|^!|^#|^$|^%|^\^|^&|^\(|^\)|^\[|^\{|^\}|^\]|^\b)]*$/";
-            $ageRegex = '[0-9])|[0-9][0-9]';
+            $nameRegex2 = "/^[a-zA-Zا-ي][a-zA-Zا-ي ]*$/";
+            $ageRegex = '[0-9]|[0-9][0-9]';
         preg_match($nameRegex,$request->input('name'),$nameMatch);
         preg_match($nameRegex,$request->input('age'),$ageMatch);
-        if(count($nameMatch)>0&&$nameMatch[0]==$request->input('name'))
-        {
-            echo"yes";
-        }
-        else{
-            echo"No Name";
-            return redirect()->back();
-        }
+        echo count($nameMatch);
         if(count($ageMatch)>0&&$ageMatch[0]==$request->input('age'))
         {
             echo"yes";
         }
         else{
             echo"No age";
-            return redirect()->back();
+            //return redirect()->back();
         }
        
+        if(count($nameMatch)>0&&$nameMatch[0]==$request->input('name'))
+        {
+            echo"yes";
+        }
+        else{
+            echo"No Name";
+            //return redirect()->back();
+        }
+        
 
 
         $user=new UserData;

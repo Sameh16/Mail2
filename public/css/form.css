@@ -223,7 +223,7 @@ header h1 {
 }
 
 header h1 i {
-  color: #779cab;
+  color: #ffffff;
   margin-right: 10px;
   margin-left: 10px;
 }
@@ -232,7 +232,6 @@ header p {
   font-weight: 400;
   font-size: 16px;
   color: rgba(255, 255, 255, 0.9);
-  letter-spacing: .05em;
   margin-bottom: 10px;
 }
 
@@ -291,7 +290,7 @@ h2.heading {
 .controls button:hover,
 .controls select:hover {
   outline: none;
-  border-color: #92FE9D;
+  border-color: #079446;
 
 }
 
@@ -300,12 +299,10 @@ h2.heading {
 .controls input[type="number"]:focus,
 .controls textarea:focus,
 .controls button:focus,
-.controls select:focus,{
+.controls select:focus{
 
-  box-shadow: 0 0 5px #92FE9D;
-  padding: 3px 0px 3px 3px;
-  margin: 5px 1px 3px 0px;
-  border: 1px solid #92FE9D;
+  box-shadow: 0 0 5px #079446;
+  border-color:#079446;
 }
 
 
@@ -325,7 +322,7 @@ h2.heading {
 .controls button:hover+label,
 .controls select:focus+label,
 .controls select:hover+label {
-  color: rgb(0, 138, 14);
+  color: #079446;
   cursor: text;
 }
 
@@ -558,8 +555,10 @@ form{
 #age-error,
 #school-error,
 #address-error,
-#workshopsel-error,
-#grad-error
+#workShop-error,
+#subworkshopsel,
+#grad-error,
+#subworkShop-error
 {
 
   position: inherit;
@@ -580,7 +579,10 @@ form{
   left: 0%;
   transform: translateX(0%);
   padding-right: 25px;
-
+  border-color :inherit  !important ;
+  box-shadow: inherit !important ;
+  border-color:inherit !important ;
+  margin-top: 10px; 
 }
 
 #attended-error
@@ -605,5 +607,80 @@ form{
   left: 40%;
   transform: translateX(40%);
   padding-right: 25px;
-
+  border-color :inherit  !important ;
+  box-shadow: inherit !important ;
+  border-color:inherit !important ; 
+  margin-top: 10px; 
 }
+
+.controls .error{
+
+  border-color:red ;
+  box-shadow: 0 0 5px red;
+  border-color:red;
+}
+
+
+.controls .valid{
+
+  border-color:#079446 ;
+  box-shadow: 0 0 5px #079446;
+  border-color:#079446;
+}
+
+::selection {
+  background: aquamarine;
+  color: black;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6 px #079446;
+}
+
+body::-webkit-scrollbar-thumb {
+background-color: #079446;
+outline: 1px solid #079446;
+}
+
+
+.success  header{
+  background: rgb(0,201,255);
+  background: linear-gradient(7 0deg, rgba(0,201,255,1) 0%, rgba(0,244,100,1) 100%);
+  color: white;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.success header h1 {
+  font-size: 50px;
+  margin-top: 200px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.success header h1 i {
+  color: #ffffff;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.success header p {
+  font-size: 22px;
+  color: #fff;
+  margin-top: 50px;
+}
+
